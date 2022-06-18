@@ -19,17 +19,126 @@
   animation-name: fadeIn;
 }
 
-
-.circular-btn {
-  border-radius: 30px;
+.container {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
-.circular-btn:hover {
-  background-color: #274494;
+.shop-local-wrapper{
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
+.shop-local-left {
+  position: absolute;
+  left: 30px;
+  top: 10%;
+  right: 0%;
+  bottom: 0px;
+  width: 130px;
+  height: 0px;
+  min-height: 200px;
+  border-radius: 5px;
+  background-image: url('/img/placeholder.jpeg');
+  background-position: 69% 80%;
+  background-size: 270%;
+}
 
-.summary-card {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+.shop-local-right {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  height:280px;
+  padding: 45px;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  border-radius: 5px;
+  background-color: #222;
+  color: #f9f9f9;
+}
+
+.shop-local-content-wrapper {
+  width: 80%;
+  padding-right: 145px;
+  padding-left: 145px;
+}
+
+.shop-local-heading {
+  margin-top: 0px;
+  font-size: 45px;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+.shop-local-left {
+  top: 8%;
+}
+
+.shop-local-content-wrapper {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.shop-local-heading {
+  margin-top: 0px;
+}
+}
+
+@media screen and (max-width: 767px) {
+  .container.shop-local-container {
+  padding-right: 0px;
+    padding-left: 0px;
+  }
+  
+  .shop-local-wrapper {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  
+  .shop-local-left {
+    position: static;
+    width: 100%;
+    border-radius: 0px;
+  }
+  .shop-local-right {
+    width: 100%;
+    -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      border-radius: 0px;
+    }
+    }
+    
+    @media screen and (max-width: 479px) {
+      .shop-local-section {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+    
+      .shop-local-right {
+        padding-right: 0px;
+        padding-left: 0px;
+  }
+
 }

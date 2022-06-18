@@ -1,52 +1,64 @@
-import { Container, Typography, Box } from "@mui/material";
+import { Container, Typography, Box, Grid, TextField } from "@mui/material";
 import type { NextPage } from "next";
 import { BaseLayout } from "../components/layout";
+import { seedDataPoke } from "../database";
 
 const Home: NextPage = () => {
   return (
     <BaseLayout>
-      <Container
-        sx={{ display: "block", paddingTop: "65px", paddingBottom: "65px" }}
-      >
-        <Container
-          sx={{
-            display: "flex",
-            direction: "horizontal",
-            minHeight: "500px",
-            alignContent: "strech",
-            justifyContent: "end",
-            position: "relative",
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              width: "30",
-              minHeight: "440",
-              fit: "fill",
-              position: "absolute",
-              top: "6%",
-              borderRadius: "5px",
-              backgroundColor: "rgba(255, 255,21)",
-            }}
-          >
-            sasdasdasd
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              width: "80",
-              fit: "fill",
-              position: "static",
-              borderRadius: "5px",
-              backgroundColor: "rgba(255, 123,123)",
-              padding: "45px 45px 45px 45px",
-            }}
-          >
-            ff
-          </Box>
+      {seedDataPoke.pokemon.map((pokemon, index) => (
+        <Container key={index}>
+          <Container className="container shop-local-container">
+            <Container className="shop-local-wrapper">
+              <Box className="shop-local-left"></Box>
+              <Box className="shop-local-right">
+                <Container className="shop-local-content-warpper">
+                  <Typography variant="h2" className="shop-local-heading">
+                    {pokemon.pname}
+                  </Typography>
+                  <Grid container>
+                    <Typography variant="body1" sx={{ paddingLeft: "15px" }}>
+                      {pokemon.rname.map((el) => (
+                        <Grid item>{el}</Grid>
+                      ))}
+                    </Typography>
+
+                    <Typography sx={{ paddingLeft: "15px" }}>
+                      {pokemon.rtotal.map((el) => (
+                        <Grid
+                          item
+                          component="form"
+                          noValidate
+                          autoComplete="off"
+                        >
+                          <TextField
+                            id="outlined-number"
+                            label="Number"
+                            type="number"
+                            size="small"
+                            InputLabelProps={{
+                              shrink: true,
+                            }}
+                          />
+                        </Grid>
+                      ))}
+                    </Typography>
+
+                    <Typography
+                      variant="body1"
+                      sx={{ paddingLeft: "15px", paddingTop: "7px" }}
+                    >
+                      {pokemon.rtotal.map((el) => (
+                        <Grid item>{el}</Grid>
+                      ))}
+                    </Typography>
+                  </Grid>
+                </Container>
+              </Box>
+            </Container>
+          </Container>
         </Container>
-      </Container>
+      ))}
     </BaseLayout>
   );
 };
